@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const BASE_URL = "http://localhost:9000";
 
 function App() {
-  const [cities, setCities] = useState({}); // eslint-disable-line no-unused-vars
+  const [cities, setCities] = useState([]); // eslint-disable-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false); // eslint-disable-line no-unused-vars
 
   useEffect(function () {
