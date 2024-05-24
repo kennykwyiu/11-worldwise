@@ -46,11 +46,13 @@ function App() {
               element={<CityList cities={cities} isLoading={isLoading} />}
             />{" "}
             <Route
-              index
+              path="cities"
+              element={<CityList cities={cities} isLoading={isLoading} />}
+            />
+            <Route
+              path="countries"
               element={<CountryList cities={cities} isLoading={isLoading} />}
             />
-            <Route path="cities" element={<CityList />} />
-            <Route path="countries" element={<p>Countries</p>} />
             <Route path="form" element={<p>Form</p>} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
