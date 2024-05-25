@@ -2,6 +2,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
+import { useParams } from "react-router-dom";
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
@@ -11,6 +13,8 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function City() {
+  const { id } = useParams();
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -22,7 +26,7 @@ function City() {
   const { cityName, emoji, date, notes } = currentCity;
 
   return (
-    <h1>City</h1>
+    <h1>City {id}</h1>
     // <div className={styles.city}>
     //   <div className={styles.row}>
     //     <h6>City name</h6>
