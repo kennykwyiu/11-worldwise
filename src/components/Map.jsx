@@ -1,9 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import styles from "./Map.module.css";
 
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 function Map() {
   const { searchParams, setSearchParams } = useSearchParams();
 
