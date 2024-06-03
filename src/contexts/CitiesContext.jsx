@@ -7,6 +7,7 @@ function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]); // eslint-disable-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false); // eslint-disable-line no-unused-vars
   const [currentCity, setCurrentCity] = useState({});
+
   useEffect(function () {
     async function fetchCities() {
       try {
@@ -26,7 +27,7 @@ function CitiesProvider({ children }) {
   async function getCity(id) {
     try {
       setIsLoading(true);
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
+      const res = await fetch(`${BASE_URL}/cities/?id=${id}`);
       const data = await res.json();
       setCurrentCity(data);
     } catch {
