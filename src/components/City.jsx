@@ -24,17 +24,26 @@ function City() {
     function () {
       getCity(id);
     },
-    [id, getCity]
+    [id]
   );
 
   const { cityName, emoji, date, notes } = currentCity;
+
+  const flagemojiToPNG = (flag) => {
+    var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
+      .map((char) => String.fromCharCode(char - 127397).toLowerCase())
+      .join("");
+    return (
+      <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
+    );
+  };
 
   return (
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <span>{emoji ? flagemojiToPNG(emoji) : ""}</span> {cityName}
         </h3>
       </div>
 
