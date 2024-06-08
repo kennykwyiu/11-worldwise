@@ -23,7 +23,6 @@ function Map() {
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
-  console.log(mapLat, mapLng);
   console.log(mapPosition);
 
   useEffect(
