@@ -14,6 +14,15 @@ function Map() {
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
+  const flagemojiToPNG = (flag) => {
+    var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
+      .map((char) => String.fromCharCode(char - 127397).toLowerCase())
+      .join("");
+    return (
+      <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
+    );
+  };
+
   return (
     <div className={styles.mapContainer}>
       <MapContainer
@@ -32,7 +41,8 @@ function Map() {
             key={city.id}
           >
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              <span>{flagemojiToPNG(city.emoji)}</span>
+              <span>{city.cityName}</span>
             </Popup>
           </Marker>
         ))}
