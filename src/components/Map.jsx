@@ -1,20 +1,27 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./Map.module.css";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 
 function Map() {
   const navigate = useNavigate();
   const { cities } = useCities();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
-  console.log(mapLat);
-  console.log(mapLng);
+
+  useEffect(
+    function () {
+      if (mapLat && mapLng) {
+        setMapPosition([mapLat, mapLng]);
+      }
+    },
+    [mapLat, mapLng]
+  );
 
   const flagemojiToPNG = (flag) => {
     var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
@@ -28,9 +35,10 @@ function Map() {
   return (
     <div className={styles.mapContainer}>
       <MapContainer
-        center={mapLat === null ? mapPosition : [mapLat, mapLng]}
+        // center={mapLat === null ? mapPosition : [mapLat, mapLng]}
         // center={[mapLat, mapLng]}
-        zoom={6}
+        center={mapPosition}
+        zoom={7}
         scrollWheelZoom={true}
         className={styles.map}
       >
@@ -49,9 +57,16 @@ function Map() {
             </Popup>
           </Marker>
         ))}
+        {mapLat && <ChangeCenter position={[mapLat, mapLng]} />}
       </MapContainer>
     </div>
   );
+}
+
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+  return null;
 }
 
 export default Map;
