@@ -11,8 +11,10 @@ function Map() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const mapLat = searchParams.get("lat");
+  const mapLng = searchParams.get("lng");
+  console.log(mapLat);
+  console.log(mapLng);
 
   const flagemojiToPNG = (flag) => {
     var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
@@ -26,8 +28,9 @@ function Map() {
   return (
     <div className={styles.mapContainer}>
       <MapContainer
-        center={mapPosition}
-        zoom={13}
+        center={mapLat === null ? mapPosition : [mapLat, mapLng]}
+        // center={[mapLat, mapLng]}
+        zoom={6}
         scrollWheelZoom={true}
         className={styles.map}
       >
