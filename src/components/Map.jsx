@@ -7,6 +7,7 @@ import {
   TileLayer,
   useMap,
   useMapEvent,
+  useMapEvents,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
@@ -16,12 +17,12 @@ import Button from "./Button";
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
   const {
     isLoading: isLoadingPosition,
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
+  const [searchParams] = useSearchParams();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
@@ -39,7 +40,11 @@ function Map() {
 
   useEffect(
     function () {
-      if (geolocationPosition) {
+      if (
+        geolocationPosition &&
+        geolocationPosition.lat &&
+        geolocationPosition.lng
+      ) {
         setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
       }
     },
@@ -85,7 +90,7 @@ function Map() {
             </Popup>
           </Marker>
         ))}
-        {mapLat && <ChangeCenter position={[mapLat, mapLng]} />}
+        {<ChangeCenter position={mapPosition} />}
         <DetechClick />
       </MapContainer>
     </div>
@@ -102,7 +107,7 @@ function ChangeCenter({ position }) {
 function DetechClick() {
   const navigate = useNavigate();
 
-  useMapEvent({
+  useMapEvents({
     click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
 }
