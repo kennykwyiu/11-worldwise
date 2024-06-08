@@ -18,13 +18,15 @@ function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const [searchParams] = useSearchParams();
   const {
-    isLoading: isLOadingPosition,
+    isLoading: isLoadingPosition,
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
+
+  console.log(mapPosition);
 
   useEffect(
     function () {
@@ -33,6 +35,15 @@ function Map() {
       }
     },
     [mapLat, mapLng]
+  );
+
+  useEffect(
+    function () {
+      if (geolocationPosition) {
+        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+      }
+    },
+    [geolocationPosition]
   );
 
   const flagemojiToPNG = (flag) => {
@@ -46,9 +57,11 @@ function Map() {
 
   return (
     <div className={styles.mapContainer}>
-      <Button type={"position"} onClick={getPosition}>
-        {isLOadingPosition ? "LOading..." : "Use your position"}
-      </Button>
+      {!geolocationPosition && (
+        <Button type={"position"} onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use your position"}
+        </Button>
+      )}
       <MapContainer
         // center={mapLat === null ? mapPosition : [mapLat, mapLng]}
         // center={[mapLat, mapLng]}
@@ -80,6 +93,7 @@ function Map() {
 }
 
 function ChangeCenter({ position }) {
+  console.log("ChangeCenter position: " + position);
   const map = useMap();
   map.setView(position);
   return null;
