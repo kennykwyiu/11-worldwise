@@ -8,5 +8,4 @@ function Message({ message }) {
     </p>
   );
 }
-
 export default Message;
