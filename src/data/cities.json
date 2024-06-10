@@ -35,6 +35,30 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
+    },
+    {
+      "id": "644e",
+      "cityName": "Villar de Olalla",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-06-10T08:09:00.952Z",
+      "notes": "testing",
+      "position": {
+        "lat": "39.985538414809746",
+        "lng": "-2.3071289062500004"
+      }
+    },
+    {
+      "id": "a989",
+      "cityName": "Tchirozerine",
+      "country": "Niger (the)",
+      "emoji": "🇳🇪",
+      "date": "2024-06-10T08:13:10.584Z",
+      "notes": "testing for re-load data",
+      "position": {
+        "lat": "17.518344187852218",
+        "lng": "9.931640625000002"
+      }
     }
   ]
 }

@@ -11,6 +11,7 @@ import BackButton from "./BackButton";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 import Message from "../components/Message";
 import Spinner from "../components/Spinner";
+import { useCities } from "../contexts/CitiesContext";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -22,6 +23,7 @@ export function convertToEmoji(countryCode) {
 
 function Form() {
   const [lat, lng] = useUrlPosition();
+  const { createCity } = useCities();
 
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [cityName, setCityName] = useState("");
@@ -89,7 +91,7 @@ function Form() {
       position: { lat, lng },
     };
 
-    console.log(newCity);
+    createCity(newCity);
   }
 
   if (isLoadingGeocoding) return <Spinner />;
