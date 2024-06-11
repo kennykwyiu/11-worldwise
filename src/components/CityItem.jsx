@@ -35,7 +35,12 @@ function CityItem({ city }) {
         <span className={styles.emoji}>{flagemojiToPNG(emoji)}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
-        <button className={styles.delateBtn}>&times;</button>
+        <button
+          className={styles.deleteBtn}
+          onClick={() => console.log("TEST")}
+        >
+          &times;
+        </button>
       </Link>
     </li>
   );
