@@ -24,6 +24,11 @@ function CityItem({ city }) {
     );
   };
 
+  function handleClick(e) {
+    e.preventDefault();
+    console.log("TEST");
+  }
+
   return (
     <li>
       <Link
@@ -35,10 +40,7 @@ function CityItem({ city }) {
         <span className={styles.emoji}>{flagemojiToPNG(emoji)}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
-        <button
-          className={styles.deleteBtn}
-          onClick={() => console.log("TEST")}
-        >
+        <button className={styles.deleteBtn} onClick={handleClick}>
           &times;
         </button>
       </Link>
