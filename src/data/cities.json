@@ -35,66 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
-    },
-    {
-      "id": "644e",
-      "cityName": "Villar de Olalla",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-06-10T08:09:00.952Z",
-      "notes": "testing",
-      "position": {
-        "lat": "39.985538414809746",
-        "lng": "-2.3071289062500004"
-      }
-    },
-    {
-      "id": "a989",
-      "cityName": "Tchirozerine",
-      "country": "Niger (the)",
-      "emoji": "🇳🇪",
-      "date": "2024-06-10T08:13:10.584Z",
-      "notes": "testing for re-load data",
-      "position": {
-        "lat": "17.518344187852218",
-        "lng": "9.931640625000002"
-      }
-    },
-    {
-      "id": "6f0a",
-      "cityName": "Pervari",
-      "country": "Turkiye",
-      "emoji": "🇹🇷",
-      "date": "2024-06-10T08:18:13.208Z",
-      "notes": "",
-      "position": {
-        "lat": "37.85750715625203",
-        "lng": "42.275390625"
-      }
-    },
-    {
-      "id": "bc8b",
-      "cityName": "Daneborg",
-      "country": "Greenland",
-      "emoji": "🇬🇱",
-      "date": "2024-06-10T08:20:18.863Z",
-      "notes": "",
-      "position": {
-        "lat": "76.51681887717322",
-        "lng": "-43.94531250000001"
-      }
-    },
-    {
-      "id": "c5fd",
-      "cityName": "Brieva",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2024-06-11T13:14:17.065Z",
-      "notes": "",
-      "position": {
-        "lat": "41.02135510866602",
-        "lng": "-4.053955078125001"
-      }
     }
   ]
 }
