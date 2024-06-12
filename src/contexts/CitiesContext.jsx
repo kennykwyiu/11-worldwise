@@ -1,12 +1,30 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 
 const CitiesContext = createContext();
 const BASE_URL = "http://localhost:9000";
 
+const initialState = {
+  cities: [],
+  isLoading: false,
+  currentCity: {},
+};
+
+function reducer(state, action) {}
+
 function CitiesProvider({ children }) {
-  const [cities, setCities] = useState([]); // eslint-disable-line no-unused-vars
-  const [isLoading, setIsLoading] = useState(false); // eslint-disable-line no-unused-vars
-  const [currentCity, setCurrentCity] = useState({});
+  // const [cities, setCities] = useState([]); // eslint-disable-line no-unused-vars
+  // const [isLoading, setIsLoading] = useState(false); // eslint-disable-line no-unused-vars
+  // const [currentCity, setCurrentCity] = useState({});
+  const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   useEffect(function () {
     async function fetchCities() {
