@@ -37,9 +37,14 @@ function reducer(state, action) {
       return {
         ...state,
         isLoading: false,
-        // currentCity: action.payload,
+        cities: [...state.cities, action.payload],
       };
     case "cities/deleted":
+      return {
+        ...state,
+        isLoading: false,
+        cities: state.cities.filter((city) => city.id !== action.payload),
+      };
 
     case "rejected":
       return {
@@ -72,7 +77,7 @@ function CitiesProvider({ children }) {
       } catch {
         dispatch({
           type: "rejected",
-          payload: "There was an error loading data...",
+          payload: "There was an error loading the cities...",
         });
       }
     }
@@ -89,7 +94,7 @@ function CitiesProvider({ children }) {
     } catch {
       dispatch({
         type: "rejected",
-        payload: "There was an error loading data...",
+        payload: "There was an error loading the city...",
       });
     }
   }
