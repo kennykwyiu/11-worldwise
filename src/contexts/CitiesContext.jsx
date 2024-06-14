@@ -33,13 +33,13 @@ function reducer(state, action) {
         isLoading: false,
         currentCity: action.payload,
       };
-    case "cities/created":
+    case "city/created":
       return {
         ...state,
         isLoading: false,
         cities: [...state.cities, action.payload],
       };
-    case "cities/deleted":
+    case "city/deleted":
       return {
         ...state,
         isLoading: false,
@@ -111,11 +111,11 @@ function CitiesProvider({ children }) {
       });
       const data = await res.json();
       console.log(data);
-      setCities((cities) => [...cities, data]);
+      dispatch({ type: "city/created", payload: data });
     } catch {
       dispatch({
         type: "rejected",
-        payload: "There was an error creating city.",
+        payload: "There was an error creating the city.",
       });
     }
   }
@@ -127,11 +127,11 @@ function CitiesProvider({ children }) {
       await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
-      setCities((cities) => cities.filter((city) => city.id !== id));
+      dispatch({ type: "city/deleted", payload: id });
     } catch {
       dispatch({
         type: "rejected",
-        payload: "There was an error deleting city.",
+        payload: "There was an error deleting the city.",
       });
     }
   }

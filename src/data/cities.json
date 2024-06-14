@@ -35,6 +35,66 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
+    },
+    {
+      "id": "370b",
+      "cityName": "Moral de Calatrava",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-06-13T13:10:12.973Z",
+      "notes": "",
+      "position": {
+        "lat": "38.81403111409755",
+        "lng": "-3.5595703125"
+      }
+    },
+    {
+      "id": "3eee",
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2024-06-13T13:10:29.794Z",
+      "notes": "",
+      "position": {
+        "lat": "51.45400691005982",
+        "lng": "-0.17578125"
+      }
+    },
+    {
+      "id": "723c",
+      "cityName": "Nenagh",
+      "country": "Ireland",
+      "emoji": "🇮🇪",
+      "date": "2024-06-13T13:10:37.824Z",
+      "notes": "",
+      "position": {
+        "lat": "52.736291655910925",
+        "lng": "-8.327636718750002"
+      }
+    },
+    {
+      "id": "bd67",
+      "cityName": "Torshavn",
+      "country": "Faroe Islands (the)",
+      "emoji": "🇫🇴",
+      "date": "2024-06-13T13:10:46.865Z",
+      "notes": "",
+      "position": {
+        "lat": "62.12443624549497",
+        "lng": "-6.96533203125"
+      }
+    },
+    {
+      "id": "b3b1",
+      "cityName": "Þingeyjarsveit",
+      "country": "Iceland",
+      "emoji": "🇮🇸",
+      "date": "2024-06-13T13:10:50.859Z",
+      "notes": "",
+      "position": {
+        "lat": "64.92354174306499",
+        "lng": "-17.973632812500004"
+      }
     }
   ]
 }
