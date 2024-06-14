@@ -73,18 +73,6 @@
       }
     },
     {
-      "id": "bd67",
-      "cityName": "Torshavn",
-      "country": "Faroe Islands (the)",
-      "emoji": "🇫🇴",
-      "date": "2024-06-13T13:10:46.865Z",
-      "notes": "",
-      "position": {
-        "lat": "62.12443624549497",
-        "lng": "-6.96533203125"
-      }
-    },
-    {
       "id": "b3b1",
       "cityName": "Þingeyjarsveit",
       "country": "Iceland",
@@ -94,6 +82,54 @@
       "position": {
         "lat": "64.92354174306499",
         "lng": "-17.973632812500004"
+      }
+    },
+    {
+      "id": "4d0d",
+      "cityName": "Cruzy",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-06-14T14:51:23.969Z",
+      "notes": "",
+      "position": {
+        "lat": "43.31718491566705",
+        "lng": "2.9553222656250004"
+      }
+    },
+    {
+      "id": "a793",
+      "cityName": "Reitnau",
+      "country": "Switzerland",
+      "emoji": "🇨🇭",
+      "date": "2024-06-14T14:51:34.321Z",
+      "notes": "",
+      "position": {
+        "lat": "47.264320080254805",
+        "lng": "8.041992187500002"
+      }
+    },
+    {
+      "id": "6dd7",
+      "cityName": "Incourt",
+      "country": "Belgium",
+      "emoji": "🇧🇪",
+      "date": "2024-06-14T14:52:07.422Z",
+      "notes": "",
+      "position": {
+        "lat": "50.680797145321655",
+        "lng": "4.768066406250001"
+      }
+    },
+    {
+      "id": "fc39",
+      "cityName": "Hong Kong",
+      "country": "Hong Kong",
+      "emoji": "🇭🇰",
+      "date": "2024-06-14T14:54:51.692Z",
+      "notes": "",
+      "position": {
+        "lat": "22.327926219749628",
+        "lng": "114.18871879577638"
       }
     }
   ]
