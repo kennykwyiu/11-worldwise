@@ -61,18 +61,6 @@
       }
     },
     {
-      "id": "723c",
-      "cityName": "Nenagh",
-      "country": "Ireland",
-      "emoji": "🇮🇪",
-      "date": "2024-06-13T13:10:37.824Z",
-      "notes": "",
-      "position": {
-        "lat": "52.736291655910925",
-        "lng": "-8.327636718750002"
-      }
-    },
-    {
       "id": "b3b1",
       "cityName": "Þingeyjarsveit",
       "country": "Iceland",
@@ -94,18 +82,6 @@
       "position": {
         "lat": "43.31718491566705",
         "lng": "2.9553222656250004"
-      }
-    },
-    {
-      "id": "a793",
-      "cityName": "Reitnau",
-      "country": "Switzerland",
-      "emoji": "🇨🇭",
-      "date": "2024-06-14T14:51:34.321Z",
-      "notes": "",
-      "position": {
-        "lat": "47.264320080254805",
-        "lng": "8.041992187500002"
       }
     },
     {
