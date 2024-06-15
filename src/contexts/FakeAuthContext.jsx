@@ -1,8 +1,13 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
+  const [{ user, isAuthenticated }, dispatch] = useReducer();
+  function login(email, password) {}
+
+  function logout() {}
+
   return <AuthContext.Provider>{children}</AuthContext.Provider>;
 }
 
